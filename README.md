@@ -1,6 +1,6 @@
 # Poojitha Natarajan Portfolio
 
-This repository contains the personal portfolio of Poojitha Natarajan.
+Link to my personal portfolio webiste (https://poojithanagn.github.io/Poojitha_Portfolio/)
 
 ## Overview
 This portfolio showcases my experience, projects, certifications, and skills as a Project Manager and AI/Data enthusiast. It is designed as a single-page HTML website for easy navigation and a modern look.
