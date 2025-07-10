@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poojitha Nag Natarajan | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background-color: #001f3f;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #001837, #002855);
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center; /* Vertically center items */
+      justify-content: center; /* Horizontally center items on all screens */
+      flex-direction: column; /* Stack on smaller screens */
+      text-align: center; /* Center text within header-text for small screens */
+    }
+    header .profile-image-container {
+      width: 150px; /* Increased image size */
+      height: 150px; /* Increased image size */
+      border-radius: 50%;
+      border: 3px solid #66ccff;
+      overflow: hidden;
+      margin-bottom: 1rem; /* Space below image on smaller screens */
+    }
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    header .header-text {
+      text-align: center; /* Ensure text within this div is centered for all screen sizes */
+    }
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aad8ff;
+      margin-bottom: 1rem; /* Add space below paragraph before icons */
+    }
+
+    /* Styles for the new social icons */
+    .social-icons {
+      display: flex;
+      justify-content: center; /* Center the icons horizontally */
+      gap: 1.5rem; /* Space between icons */
+      margin-top: 1rem; /* Space above icons if needed */
+    }
+
+    .social-icons a {
+      color: #66ccff; /* Icon color */
+      font-size: 1.8rem; /* Icon size */
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none; /* Remove underline from icons */
+    }
+
+    .social-icons a:hover {
+      color: #ffffff; /* Hover color */
+      transform: translateY(-3px); /* Subtle lift effect */
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row; /* Side-by-side for larger screens */
+        justify-content: center; /* Center the entire header content horizontally */
+      }
+      header .profile-image-container {
+        margin-right: 2rem; /* Space between image and text */
+        margin-bottom: 0;
+      }
+      header .header-text {
+        text-align: left; /* Align text to the left when side-by-side */
+      }
+      .social-icons {
+        justify-content: flex-start; /* Align icons with text on larger screens */
+      }
+    }
+
+    nav {
+      background: #002c4d;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color: #7ec8e3;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    section {
+      background: #003366;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #7ec8e3;
+      font-family: 'Poppins', sans-serif;
+      border-bottom: 2px solid #7ec8e3;
+      padding-bottom: 0.5rem;
+      display: flex; /* Enable flexbox for icon and text alignment */
+      align-items: center; /* Vertically align icon and text */
+      gap: 0.75rem; /* Space between icon and text */
+    }
+    h2 i {
+      font-size: 1.2em; /* Adjust icon size relative to heading text */
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #66ccff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Add this to your <style> block or external CSS */
+.project-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between cards */
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #004d99, #0066cc); /* Slightly different gradient */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 a {
+  color: #fff; /* White text for project titles on cards */
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+
+.project-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #e0f2f7; /* Lighter text for descriptions */
+  flex-grow: 1; /* Makes cards roughly equal height */
+}
+
+/* Optional: thumbnail image within card */
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+    .skills-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-box {
+      background: linear-gradient(135deg, #345678, #4a90e2);
+      padding: 1rem;
+      border-radius: 10px;
+      color: white;
+      flex: 1 1 calc(50% - 1rem);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .skill-box:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 600px) {
+      .skill-box {
+        flex: 1 1 100%;
+      }
+    }
+
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .cert-badge {
+      background: linear-gradient(135deg, #0066cc, #00aaff);
+      color: white;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 15px;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      font-size: 1rem;
+      cursor: pointer; /* Indicate it's clickable */
+    }
+    .cert-badge i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .cert-badge:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .contact-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #001837;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 2000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      animation: fadeInModal 0.3s ease-out;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    /* Close Button */
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="profile-image-container">
+      <img src="https://i.imgur.com/Prkx621.jpeg" alt="Profile Photo" />
+    </div>
+    <div class="header-text">
+      <h1>Poojitha Natarajan</h1>
+      <p>Project Manager | AI Enthusiast | Data-Driven Professional</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/poojitha-nag-natarajan-997876117/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/PoojithaNagN" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        <a href="https://public.tableau.com/app/profile/poojitha.natarajan/vizzes" target="_blank" aria-label="Tableau Public Profile"><i class="fas fa-chart-bar"></i></a>
+        </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
+    <a href="#skills"><i class="fas fa-briefcase"></i> Skills</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>
+        I'm a certified PMP with a background in Business Analysis and a passion for AI and project delivery. Currently looking for opportunities where I can drive outcomes and lead projects with impact.
+        Passionate about turning data into impactful decisions and leading projects that deliver measurable value.</p>
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+    <div class="project-list-container">
+      <div class="project-card">
+        <h3><a href="projects/ai-chatbot.html">AI Chatbot</a></h3>
+        <p>Built using Cursor AI and Deepseek in Python to automate PM tasks.</p>
+        </div>
+      <div class="project-card">
+        <h3><a href="projects/kidney-disease.html">Kidney Disease Classification</a></h3>
+        <p>Deep learning model for disease detection.</p>
+      </div>
+      <div class="project-card">
+        <h3><a href="projects/student-performance.html">Student Performance Indicator</a></h3>
+        <p>Machine Learning model for student performance prediction.</p>
+      </div>
+      <div class="project-card">
+        <h3><a href="projects/football-image.html">Football Image Classification</a></h3>
+        <p>Image classification using Python and machine learning.</p>
+      </div>
+      <div class="project-card">
+        <h3><a href="projects/california-wildfires.html">California Wildfires Tableau Dashboard</a></h3>
+        <p>Visualized causes and trends in Tableau.</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2><i class="fas fa-file-alt"></i> Resume</h2>
+    <p><a href="https://your-resume-link.com" target="_blank">Download Resume (PDF)</a></p>
+    <iframe src="https://docs.google.com/document/d/1Oow8FRn5M4fagBS3Mladn49abp-o_G80/preview" allow="autoplay"></iframe>
+  </section>
+
+  <section id="skills">
+    <h2><i class="fas fa-briefcase"></i> Skills</h2>
+    <div class="skills-boxes">
+      <div class="skill-box"><strong>Programming Languages:</strong> Python, NumPy, Pandas, Scikit-learn, Keras</div>
+      <div class="skill-box"><strong>Databases & PM Tools:</strong> SQL Server, Access, MySQL, Smartsheet, JIRA</div>
+      <div class="skill-box"><strong>Data Visualization:</strong> Power BI, Tableau (Desktop & Server)</div>
+      <div class="skill-box"><strong>Business Intelligence:</strong> Excel, MS Visio, R</div>
+      <div class="skill-box"><strong>Data Processing:</strong> ETL, Feature Engineering, Preprocessing</div>
+      <div class="skill-box"><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, OpenCV, PyTorch</div>
+      <div class="skill-box"><strong>Methodologies:</strong> Agile, Waterfall, SCRUM</div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+    <div class="certifications">
+      <div class="cert-badge" data-image="https://i.imgur.com/Vv9PYlm.jpeg">
+        <i class="fas fa-briefcase"></i> PMP
+      </div>
+      <div class="cert-badge" data-image="https://i.imgur.com/0COmLXN.jpeg">
+        <i class="fas fa-project-diagram"></i> CSM
+      </div>
+      <div class="cert-badge" data-image="https://i.imgur.com/fyk1ziX.jpeg"">
+        <i class="fas fa-cloud"></i> CAPM
+      </div>
+      <div class="cert-badge" data-image="https://i.imgur.com/EFF8FVW.png">
+        <i class="fas fa-chart-line"></i> Google Data Analytics
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><i class="fas fa-envelope"></i> Contact</h2>
+    <div class="contact-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email icon" />
+      <a href="mailto:n.poojitha75@gmail.com">n.poojitha75@gmail.com</a>
+    </div>
+    <div class="contact-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon" />
+      <a href="https://linkedin.com/in/poojitha-nag-natarajan-997876117/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+    </div>
+    <div class="contact-icons">
+      <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau icon" style="width: 28px; height: 28px;" />
+      <a href="https://public.tableau.com/app/profile/poojitha.natarajan/vizzes" target="_blank" rel="noopener noreferrer">Tableau Profile</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Poojitha Natarajan. All rights reserved.
+  </footer>
+
+  <div id="certificationModal" class="modal">
+    <span class="close-button">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("certificationModal");
+
+    // Get the image tag inside the modal
+    var modalImage = document.getElementById("modalImage");
+
+    // Get the <span> element that closes the modal
+    var closeButton = document.getElementsByClassName("close-button")[0];
+
+    // Get all certification badges
+    var certBadges = document.querySelectorAll(".cert-badge");
+
+    // Loop through all badges and add a click event listener
+    certBadges.forEach(function(badge) {
+      badge.addEventListener("click", function() {
+        var imageUrl = this.getAttribute("data-image"); // Get the image URL from data-image attribute
+        modal.style.display = "flex"; // Show the modal (using flex for centering)
+        modalImage.src = imageUrl; // Set the image source
+      });
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    closeButton.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the image, close the modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
